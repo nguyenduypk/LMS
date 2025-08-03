@@ -1,0 +1,43 @@
+.class-detail-layout {
+  display: flex;
+  height: calc(100vh - 64px);
+  background-color: #f8fafc;
+}
+
+.class-detail-main {
+  flex: 1;
+  overflow: auto;
+  padding: 24px;
+  background-color: white;
+}
+
+.class-announcement-main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.class-announcement-empty {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.class-announcement-illustration {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.class-announcement-empty-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.class-announcement-empty-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+} 

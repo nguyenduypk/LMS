@@ -1,0 +1,122 @@
+.class-members-layout {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f8fd;
+  box-sizing: border-box;
+}
+.class-members-main {
+  flex: 1;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-left: 260px;
+  padding-top: 72px;
+  min-height: calc(100vh - 72px);
+}
+.class-members-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1976d2;
+  margin: 18px 0 12px 0;
+  margin-left: 18px;
+}
+.class-members-search {
+  width: calc(100% - 50px);
+  min-width: 120px;
+  max-width: none;
+  box-sizing: border-box;
+  padding: 10px 16px;
+  font-size: 16px;
+  border: 1.5px solid #e3e3e3;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  outline: none;
+  transition: border 0.18s;
+  background: #fff;
+  margin-left: 18px;
+  margin-right: 32px;
+}
+.class-members-search:focus {
+  border-color: #1976d2;
+}
+.class-members-table-wrap {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.06);
+  padding: 18px 32px 24px 32px;
+  min-height: unset;
+  height: calc(100vh - 72px);
+}
+.class-members-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  font-size: 16px;
+}
+.class-members-table th {
+  background: #e3f0ff;
+  color: #1976d2;
+  font-weight: 700;
+  padding: 12px 10px;
+  text-align: left;
+  border: none;
+}
+.class-members-table td {
+  background: #fff;
+  color: #1a237e;
+  padding: 14px 10px;
+  border: none;
+  border-bottom: 1px solid #e3e3e3;
+  vertical-align: middle;
+}
+.class-members-table tr:last-child td {
+  border-bottom: none;
+}
+.class-members-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e3f0ff;
+  color: #1976d2;
+  font-weight: 700;
+  font-size: 17px;
+  margin-right: 12px;
+  text-transform: uppercase;
+  overflow: hidden;
+  object-fit: cover;
+}
+.class-members-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.class-members-name {
+  font-weight: 500;
+  color: #1a237e;
+  font-size: 16px;
+}
+@media (max-width: 900px) {
+  .class-members-main {
+    margin-left: 0;
+    padding-top: 56px;
+  }
+  .class-members-table-wrap {
+    padding: 10px 2px 12px 2px;
+    border-radius: 10px;
+  }
+  .class-members-search {
+    width: 100%;
+    min-width: 0;
+    margin-right: 0;
+  }
+} 

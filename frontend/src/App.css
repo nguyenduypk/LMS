@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: #f7fafd;
+  color: #222;
+}
+
+.App {
+  min-height: 100vh;
+  background: #f7fafd;
+}
+
+/* Xóa các style mặc định của CRA */
+.App-logo, .App-header, .App-link {
+  display: none;
+}

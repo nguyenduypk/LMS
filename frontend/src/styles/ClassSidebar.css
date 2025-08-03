@@ -1,0 +1,108 @@
+/* Class Sidebar Styles */
+.class-sidebar {
+  width: 260px;
+  min-height: 400px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.08);
+  padding: 32px 18px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 28px;
+  height: calc(100vh - 72px);
+  justify-content: flex-start;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  z-index: 20;
+}
+.class-sidebar-header {
+  margin-bottom: 8px;
+}
+.class-sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 2px;
+}
+.class-sidebar-code {
+  font-size: 15px;
+  color: #607d8b;
+  margin-bottom: 2px;
+}
+.class-sidebar-teacher {
+  font-size: 15px;
+  color: #1565c0;
+}
+.class-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+}
+.class-sidebar-nav button {
+  background: #f5f8fd;
+  color: #1976d2;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.class-sidebar-nav button.active {
+  background: #e3f0ff;
+  color: #0d47a1;
+  font-weight: 700;
+}
+.class-sidebar-nav button:hover {
+  background: #e3f0ff;
+  color: #1565c0;
+}
+.class-sidebar-leave {
+  margin-top: auto;
+  background: #fff0f0;
+  color: #e53935;
+  border: 1.5px solid #e53935;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  align-self: stretch;
+}
+.class-sidebar-leave:hover {
+  background: #e53935;
+  color: #fff;
+}
+.class-sidebar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 10px;
+}
+.class-announcement-main {
+  margin-left: 260px;
+}
+@media (max-width: 900px) {
+  .class-sidebar {
+    width: 100%;
+    min-width: 0;
+    border-radius: 12px;
+    padding: 18px 4px 12px 4px;
+    box-shadow: 0 1px 6px rgba(25, 118, 210, 0.10);
+    height: auto;
+    position: static;
+    top: unset;
+    left: unset;
+  }
+  .class-announcement-main {
+    margin-left: 0;
+  }
+} 

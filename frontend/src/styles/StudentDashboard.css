@@ -1,0 +1,438 @@
+/* StudentDashboard.css - Style cho dashboard học sinh SHub Classroom */
+
+/* Header cố định trên cùng */
+.sd-dashboard-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 20px 36px 12px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px rgba(25, 118, 210, 0.10);
+  border-radius: 0 0 18px 18px;
+  min-height: 72px;
+}
+.sd-dashboard-header-main {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+.sd-dashboard-logo {
+  font-weight: bold;
+  font-size: 28px;
+  color: #1976d2;
+  letter-spacing: 1.5px;
+  margin-right: 40px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  text-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.sd-dashboard-tabs {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+.sd-dashboard-tab {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1976d2;
+  padding: 10px 24px 8px 24px;
+  border: none;
+  background: none;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.18s, background 0.18s;
+  outline: none;
+  box-shadow: none;
+}
+.sd-dashboard-tab.active,
+.sd-dashboard-tab:hover {
+  color: #0d47a1;
+  background: #e3f0ff;
+}
+/* Bỏ underline dưới tab */
+.sd-dashboard-tab.active::after,
+.sd-dashboard-tab:hover::after {
+  display: none !important;
+}
+.sd-dashboard-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.sd-dashboard-support {
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.sd-dashboard-support:hover {
+  background: #1565c0;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+}
+.sd-dashboard-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+}
+.sd-dashboard-username {
+  font-weight: 500;
+  color: #1976d2;
+  margin-left: 10px;
+  margin-right: 4px;
+}
+.sd-dashboard-caret {
+  font-size: 13px;
+  color: #1976d2;
+}
+@media (max-width: 900px) {
+  .sd-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 8px 8px 8px;
+    min-height: 56px;
+    border-radius: 0 0 10px 10px;
+  }
+  .sd-dashboard-header-main {
+    justify-content: center;
+  }
+  .sd-dashboard-logo {
+    font-size: 20px;
+    margin-right: 16px;
+  }
+  .sd-dashboard-tabs {
+    gap: 10px;
+  }
+  .sd-dashboard-tab {
+    font-size: 15px;
+    padding: 7px 10px 6px 10px;
+  }
+  .sd-dashboard-header-right {
+    gap: 10px;
+  }
+  .sd-dashboard-avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Sidebar cố định bên trái, ngay dưới header */
+.sd-sidebar {
+  width: 220px;
+  background: #fff;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  height: calc(100vh - 72px);
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0 24px 0;
+  z-index: 90;
+  overflow-y: auto;
+}
+.sd-sidebar-logo {
+  width: 120px;
+  margin-bottom: 32px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #1976d2;
+  letter-spacing: 1px;
+}
+.sd-sidebar-menu {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sd-sidebar-item {
+  padding: 14px 28px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: #1a237e;
+  font-size: 16px;
+  border: none;
+  background: none;
+}
+.sd-sidebar-item.active,
+.sd-sidebar-item:hover {
+  background: #e3f0ff;
+  color: #1976d2;
+}
+.sd-sidebar-badge {
+  background: #1976d2;
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+/* Layout flex chỉ cho phần dưới header */
+.sd-dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f5f8fd;
+  padding-top: 72px;
+}
+
+/* Main content padding-left để không bị sidebar che */
+.sd-dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 72px);
+  background: #f5f8fd;
+}
+.sd-dashboard-layout .sd-sidebar + .sd-dashboard-main {
+  padding-left: 220px;
+}
+.sd-dashboard-main.full-width-class-page {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+}
+@media (max-width: 900px) {
+  .sd-dashboard-layout .sd-sidebar + .sd-dashboard-main {
+    padding-left: 60px;
+  }
+  .sd-dashboard-main {
+    padding-left: 60px;
+  }
+}
+/* Chỉ style riêng cho trang lớp học */
+.student-class-page {
+  width: 100%;
+  padding: 32px 64px 24px 64px;
+  box-sizing: border-box;
+  text-align: left;
+}
+/* Bỏ padding-left của .sd-dashboard-main khi có .student-class-page bên trong */
+.sd-dashboard-main .student-class-page {
+  padding-left: 0;
+}
+@media (max-width: 900px) {
+  .student-class-page {
+    padding: 16px 32px 12px 32px;
+  }
+}
+
+/* Blocks dưới header */
+.sd-dashboard-blocks {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 32px 32px 32px 32px;
+  align-content: stretch;
+  min-height: 0;
+}
+.sd-dashboard-block {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.06);
+  padding: 28px 24px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.sd-dashboard-block:hover {
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.12);
+}
+.sd-block-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 12px;
+}
+.sd-dashboard-block-content {
+  width: 100%;
+}
+.sd-dashboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sd-dashboard-list-item {
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+.sd-dashboard-list-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a237e;
+}
+.sd-dashboard-list-meta {
+  font-size: 14px;
+  color: #607d8b;
+}
+.sd-dashboard-empty {
+  color: #b0bec5;
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .sd-dashboard-blocks {
+    padding: 24px 8px 24px 8px;
+    gap: 16px;
+  }
+  .sd-dashboard-header {
+    padding: 16px 8px 8px 8px;
+  }
+}
+@media (max-width: 900px) {
+  .sd-sidebar {
+    width: 60px;
+    padding: 16px 0;
+  }
+  .sd-sidebar-logo {
+    width: 40px;
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .sd-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 4px 6px 4px;
+  }
+  .sd-dashboard-main {
+    padding-left: 60px;
+  }
+  .sd-dashboard-blocks {
+    padding: 12px 4px 12px 4px;
+  }
+  .sd-sidebar-item {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+}
+@media (max-width: 600px) {
+  .sd-dashboard-blocks {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 8px 2px 8px 2px;
+  }
+  .sd-dashboard-block {
+    padding: 12px 6px 8px 6px;
+  }
+} 
+
+/* Xóa style menu ngang */
+.sd-dashboard-menu-bar, .sd-dashboard-menu-item {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .sd-sidebar {
+    width: 60px;
+    padding: 16px 0;
+  }
+  .sd-sidebar-item {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+} 
+
+.sd-dashboard-dropdown {
+  position: absolute;
+  right: 0;
+  top: 54px;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(25,118,210,0.13);
+  min-width: 220px;
+  z-index: 200;
+  padding: 10px 0 6px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.sd-dashboard-dropdown-caret {
+  position: absolute;
+  top: -16px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 16px solid #fff;
+  filter: drop-shadow(0 -2px 2px rgba(25,118,210,0.08));
+}
+.sd-dropdown-item {
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #1a237e;
+  transition: background 0.18s, color 0.18s;
+  border: none;
+  background: none;
+  text-align: left;
+}
+.sd-dropdown-item:hover {
+  background: #e3f0ff;
+  color: #1976d2;
+}
+.sd-dropdown-divider {
+  height: 1px;
+  background: #e3e3e3;
+  margin: 6px 0;
+  width: 90%;
+  align-self: center;
+  border-radius: 2px;
+} 
+
+.sd-dashboard-avatar-initials {
+  background: linear-gradient(135deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  border: 2px solid #1976d2;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  user-select: none;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .sd-dashboard-avatar-initials {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+} 
